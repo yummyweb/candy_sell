@@ -1,0 +1,15 @@
+.container {
+    padding: 0 5rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect {
+    margin-top: 15px;
+}

@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Dashboard.module.css'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
 import { useState } from 'react'
+import DashboardHeader from '../components/DashboardHeader'
+import DashboardBody from '../components/DashboardBody'
 
-export default function Home() {
+export default function Dashboard() {
   const [onboardingModal, setOnboardingModal] = useState(false)
 
   return (
@@ -17,7 +17,8 @@ export default function Home() {
       </Head>
 
       <Navbar setOnboardingModal={setOnboardingModal} />
-      <Hero onboardingModal={onboardingModal} setOnboardingModal={setOnboardingModal} />
+      <DashboardHeader />
+      <DashboardBody />
     </div>
   )
 }

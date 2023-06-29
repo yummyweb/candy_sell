@@ -1,0 +1,55 @@
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 11vh;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.navbar_left p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar_center {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+.navbar_right button {
+    padding: 10px 15px;
+    border: 2px solid black;
+    outline: none;
+    background-color: white;
+    font-size: 16px;
+    position: relative;
+    font-family: inherit;
+    cursor: pointer;
+    color: black;
+    border-radius: 0;
+}
+
+.navbar_right button:not([disabled]):hover::after {
+    content: '';
+    transform: translate(10px, -10px);
+    transition: transform 0.2s;
+}
+
+.navbar_right button:not([disabled]):hover {
+    background-color: white;
+}
+
+.navbar_right button::after {
+    content: '';
+    transition: transform 0.35s;
+    position: absolute;
+    background-color: black;
+    top: 10px;
+    right: 10px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
