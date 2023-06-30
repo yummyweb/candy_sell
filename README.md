@@ -2,7 +2,7 @@
 
 ## What is it
 
-Coinsense is a whimsical wallet analyzer that takes a fun and creative approach at your crypto portfolio and past transactions. With a simple and clear UI/UX, our aim is for you to know gain more insights into your own transaction history on a "degen" scale. You can watch the demo video for candy_sell, [here]()
+candy_sell is a content marketplace on Solana, which allows sellers, creators and artists to sell their digital products to users on Solana, and receive 100% of the earnings. NO COMMISSIONS, NO MIDDLEMEN. Imagine gumroad.com but for web3. To know more, you can watch the demo video for candy_sell, [here](https://youtu.be/o8GSdY6ZAaE).
 
 ## Technologies Used
 
