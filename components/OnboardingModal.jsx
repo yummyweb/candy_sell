@@ -8,13 +8,14 @@ import { useSession } from "next-auth/react";
 
 function OnboardingModal({ setOnboardingModal, publicKey }) {
     const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
     const [isSeller, setIsSeller] = useState(false)
     const { data } = useSession()
 
     const updateInfo = async () => {
         const { _, error } = await supabase
             .from('user')
-            .update({ username: name, is_seller: isSeller })
+            .update({ username: name, is_seller: isSeller, email })
             .eq('public_key', data.user.publicKey)
 
         if (error) {
@@ -39,6 +40,10 @@ function OnboardingModal({ setOnboardingModal, publicKey }) {
                     <div className={styles.modal_name}>
                         <span className={styles.modal_label}>@</span>
                         <input value={name} placeholder="Enter username" onChange={e => setName(e.target.value)} className={styles.modal_answer} />
+                    </div>
+                    <p className={styles.modal_question}>How do we contact you?</p>
+                    <div className={styles.modal_name}>
+                        <input value={email} placeholder="Enter email" onChange={e => setEmail(e.target.value)} className={styles.modal_answer} />
                     </div>
                     <div className={styles.modal_checkbox_container}>
                         <label htmlFor="checkbox" className={styles.modal_question_seller}>Are you a seller?</label>

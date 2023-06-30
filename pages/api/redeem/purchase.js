@@ -15,6 +15,12 @@ export default async function redeemPurchase(req, res) {
             .eq("tx_id", req.body.txId)
 
         if (data[0].candypay_sessionid !== null) {
+            // Fetch the purchaser/buyer
+            const { data: buyerData, _ } = await supabase
+                .from("user")
+                .select("*")
+                .eq("public_key", data[0].buyer)
+
             const { data: productData, error } = await supabase
                 .from("product")
                 .select("*")
@@ -24,6 +30,7 @@ export default async function redeemPurchase(req, res) {
                 console.log(error)
             }
 
+            // Fetch the seller
             const { data: userData, error: userError } = await supabase
                 .from("user")
                 .select("*")
@@ -33,6 +40,7 @@ export default async function redeemPurchase(req, res) {
                 console.log(userError)
             }
 
+            // Update seller stats
             await supabase
                 .from("user")
                 .update({ total_sales: userData[0].total_sales + productData[0].price, products_sold: userData[0].products_sold + 1 })
@@ -40,9 +48,10 @@ export default async function redeemPurchase(req, res) {
 
             const resend = new Resend(process.env.RESEND_API_KEY)
 
+            // Send email to buyer
             resend.emails.send({
                 from: 'Purchases <onboarding@resend.dev>',
-                to: 'antriksh.timepass@gmail.com',
+                to: buyerData[0].email,
                 subject: 'Your Purchase from candy_sell',
                 react: Email({ tx_id: req.body.txId, purchase_link: productData[0].document })
             })

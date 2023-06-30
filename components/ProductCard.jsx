@@ -39,7 +39,7 @@ function ProductCard({ title, productId, seller_address, price, image, seller, f
 
         const { data: txData, error } = await supabase
             .from("transaction")
-            .insert({ amount: price, success: false, tx_id: txId, product: productId, candypay_sessionid: data.session_id })
+            .insert({ amount: price, success: false, tx_id: txId, product: productId, buyer: sessionData.user.publicKey, candypay_sessionid: data.session_id })
 
         if (error) {
             console.log(error)
