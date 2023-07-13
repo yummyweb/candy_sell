@@ -17,7 +17,7 @@ export default function Cancel() {
             <Navbar setOnboardingModal={setOnboardingModal} />
             <div className={styles.details}>
                 <h1>Your payment was cancelled.</h1>
-                <p className={styles.redirect}>Redirecting you to the seller's profile.</p>
+                <p className={styles.redirect}>Redirecting you to the seller&apos;s profile.</p>
             </div>
         </div>
     )

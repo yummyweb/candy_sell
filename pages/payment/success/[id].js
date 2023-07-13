@@ -57,7 +57,7 @@ export default function Success() {
             <div className={styles.details}>
                 <h1>Your payment was successful!</h1>
                 <p className={styles.redirect}>Do not refresh/reload the webpage while we process your transaction.</p>
-                <p className={styles.redirect}>Redirecting you to the seller's profile.</p>
+                <p className={styles.redirect}>Redirecting you to the seller&apos;s profile.</p>
             </div>
         </div>
     )
