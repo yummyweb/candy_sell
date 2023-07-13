@@ -52,7 +52,7 @@ function OnboardingModal({ setOnboardingModal, publicKey }) {
                 </div>
             </div>
             <div className={styles.modal_actions}>
-                <Button onClick={() => updateInfo()}>Let's Go</Button>
+                <Button onClick={() => updateInfo()}>Let&apos;s Go</Button>
             </div>
         </div>
     )
