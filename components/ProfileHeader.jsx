@@ -9,7 +9,7 @@ function ProfileHeader({ username }) {
 
     return (
         <div className={styles.header}>
-            <h1>@{username}'s Market</h1>
+            <h1>@{username}&apos;s Market</h1>
             <Button onClick={() => {
                 setFollowText("Followed")
                 setTimeout(() => setFollowText("Follow"), 2000)

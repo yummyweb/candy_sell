@@ -60,7 +60,7 @@ function DashboardBody() {
             </div>
             <div className={styles.products_grid}>
                 {data && products ? products.map(p => (
-                    <ProductCard image={p.img} title={p.name} seller={data.user.username} price={p.price} />
+                    <ProductCard key={p.id} image={p.img} title={p.name} seller={data.user.username} price={p.price} />
                 )) : "Loading..."}
             </div>
         </>
