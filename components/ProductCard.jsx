@@ -51,7 +51,7 @@ function ProductCard({ title, productId, seller_address, price, image, seller, f
 
     return (
         <div className={styles.card_wrapper}>
-            <div className={styles.card}>
+            <div className={styles.card} onClick={() => router.push(`/@/${seller}`)}>
                 <h1 className={styles.card_title}>{title}</h1>
                 <img src={image} alt="Product image" />
                 <div className={styles.card_details}>
